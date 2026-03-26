@@ -113,6 +113,27 @@ Library tab uses nested stack nav (`LibraryStack`):
 
 Other tabs are single screens.
 
+## Workflow: Ticket-First Development
+
+**MANDATORY**: Before starting ANY feature, bug fix, or non-trivial change:
+
+1. **Create a ticket** in `specs/features/` following the format of existing tickets (e.g., `ORION-001-practice-session-logging.md`)
+2. **Present the ticket** to the user for review
+3. **Wait for approval** before writing any code
+4. Only after approval: proceed with implementation
+
+Ticket naming: `ORION-{number}-{slug}.md`. Check existing tickets to determine next number.
+
+**Ticket format** (Jira-style):
+- Header table: ID, Type (Feature/Bug/Improvement), Priority, Status, Epic, Labels, Estimate
+- Summary, Motivation, User Stories
+- Detailed Description (data model, UI, technical design)
+- Acceptance Criteria (checkboxes)
+- Technical Notes, Out of Scope, Risks
+- Subtasks with sub-IDs
+
+**Exceptions** (no ticket needed): typo fixes, single-line config changes, documentation-only updates.
+
 ## Gitignored
 
 `/ios`, `/android`, `.expo/`, `node_modules/`, `.env*.local`, signing creds (`.jks`, `.p8`, `.p12`, `.key`, `.mobileprovision`)
