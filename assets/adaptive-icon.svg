@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <g stroke="#ffffff" stroke-width="51.2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left prong -->
+    <path d="M 419.84000000000003 286.72
+             L 419.84000000000003 501.76000000000005
+             Q 419.84000000000003 563.2 512 563.2"/>
+    <!-- Right prong -->
+    <path d="M 604.16 286.72
+             L 604.16 501.76000000000005
+             Q 604.16 563.2 512 563.2"/>
+    <!-- Handle -->
+    <line x1="512" y1="563.2" x2="512" y2="686.0799999999999"/>
+    <!-- Base circle -->
+    <circle cx="512" cy="716.8" r="30.72"/>
+  </g>
+</svg>

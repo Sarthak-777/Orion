@@ -1,20 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ThemeProvider, useTheme } from './src/context/ThemeContext';
+import { ToastProvider } from './src/context/ToastContext';
+import { SyncProvider } from './src/context/SyncContext';
+import { AuthProvider } from './src/context/AuthContext';
+import { UserProfileProvider } from './src/context/UserProfileContext';
+import { TunerSettingsProvider } from './src/context/TunerSettingsContext';
+import { BottomTabNavigator } from './src/navigation/BottomTabNavigator';
 
-export default function App() {
+function AppContent() {
+  const { theme, isDarkMode } = useTheme();
+
+  const navigationTheme = {
+    ...(isDarkMode ? DarkTheme : DefaultTheme),
+    colors: {
+      ...(isDarkMode ? DarkTheme.colors : DefaultTheme.colors),
+      background: theme.colors.background,
+      card: theme.colors.surface,
+      text: theme.colors.text,
+      border: theme.colors.border,
+      primary: theme.colors.text,
+    },
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ToastProvider>
+      <UserProfileProvider>
+        <TunerSettingsProvider>
+          <AuthProvider>
+            <SyncProvider>
+              <NavigationContainer theme={navigationTheme}>
+                <BottomTabNavigator />
+              </NavigationContainer>
+            </SyncProvider>
+          </AuthProvider>
+        </TunerSettingsProvider>
+      </UserProfileProvider>
+    </ToastProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <ThemeProvider>
+        <AppContent />
+      </ThemeProvider>
+    </SafeAreaProvider>
+  );
+}

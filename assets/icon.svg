@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#0a0a0a"/>
+  <g stroke="#ffffff" stroke-width="61.44" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left prong -->
+    <path d="M 389.12 256
+             L 389.12 634.88
+             Q 389.12 716.8 512 716.8"/>
+    <!-- Right prong -->
+    <path d="M 634.88 256
+             L 634.88 634.88
+             Q 634.88 716.8 512 716.8"/>
+    <!-- Handle -->
+    <line x1="512" y1="716.8" x2="512" y2="972.8"/>
+    <!-- Base circle -->
+    <circle cx="512" cy="1013.76" r="40.96"/>
+  </g>
+</svg>
